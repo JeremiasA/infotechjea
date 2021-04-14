@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contactostyles.css">
+    <title>Infotech Contact page</title>
+    
+    <%- include ('partials/head.html') %>
+</head>
+
+<body class="contact__body">
+    <main id="container" class="contact__body_container">
+
+        <div class="column1">
+        <h2 class="titulos contacto__datosYubicacion">Ubicación y datos de contacto</h2>
+        <h2 class="titulos contacto_ubicacion">Ubicación</h2>
+       
+        <div class="container_contactoYubicacion">    
+            <p class="p_ubicacion">PCIA: BUENOS AIRES LOC:CAMPANA</p>
+            <p class="p_ubicacion">Direccion: iriart 448</p>
+            <p class="p_ubicacion">Entre calles: walterio papi y moretti</p>
+
+            <p class="p_contacto_superior">Telefono: 534654354</p>
+            <p class="p_contacto_superior">Mail: salvipabli@dsadas</p>
+            <p class="p_contacto_superior">dsffasdfasfasdf</p>
+
+        </div>
+            
+            <figure class="img1">
+                <img 
+                src="images/maps1.png"
+                alt="">
+            </figure>
+        <h2 class="titulos contacto_datos">Datos de contacto</h2>
+        
+            <p class="p_contacto ">Telefono: 534654354</p>
+            <p class="p_contacto">Mail: salvipabli@dsadas</p>
+            <p class="p_contacto">dsffasdfasfasdf</p>
+        </div>
+
+        <div class="column2">
+        <h2 class="titulos formulario_titulo">Formulario de contacto</h2>
+        <form action="/send-mail" method="post" class="formulario">
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" type="text" name="nombre" required/>
+             
+            <label for="email">Email:</label>
+            <input id="nombre" type="email" name="email" required/>
+            
+            <label for="telefono">Teléfono:</label>
+            <input id="telefono" type="tel" name="telefono" required/>
+            
+            <label for="descripcion">Descripción:</label>
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+            
+            <button type="submit" class="contact_button">ENVIAR</button>
+        </form>
+    </div>
+        
+    </main>
+
+
+    <%- include ('partials/menu_movil.html') %>
+    <%- include ('partials/footer.html') %>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

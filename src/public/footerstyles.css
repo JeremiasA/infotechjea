@@ -1,0 +1,22 @@
+.footer{
+    margin:0 auto;
+    display: none;
+    align-items: center;
+    background-color: rgb(122, 124, 126);
+    width:75%;
+    height:15vh;
+    overflow: hidden;
+}
+
+.footer img{
+    width:20%;
+}
+
+.footer p{
+    margin-left:1rem;
+}
+@media (min-width : 1024px){
+    .footer{
+        display:flex;
+    }
+}

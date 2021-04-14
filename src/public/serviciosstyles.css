@@ -1,0 +1,107 @@
+.home__body{
+    background-color: rgb(0, 0, 0);
+    margin:0 auto;
+}
+
+img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
+    width:100%;
+}
+.img_servicios{
+    height:50vh;
+}
+.titulos{
+    width:70%;
+    text-align: center;
+    color:lemonchiffon;
+    border-top: 2px solid rgb(179, 61, 61);
+    border-bottom: 2px solid rgb(179, 61, 61);
+    padding: 1rem;
+}
+
+.home__h2_servicios, .home__p_servicios{
+    display: none;
+}
+
+.home__body_container{
+    margin:0 auto;
+    background-color: rgb(66, 64, 64);
+    width:100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.quienessomos, .servicios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.home__p-container, .home__p-container-servicios{
+    display:flex;
+    width:80%;
+}
+
+
+.home__p_quienessomos, .home__p_servicios{
+    margin:0;
+    font-size: 1.5rem;
+    text-align: center;
+    color:lemonchiffon;
+}
+
+.contact_button{
+    width:70%;
+    height:5rem;
+    margin: 1rem 0 5rem 0;
+    padding:.5rem;
+    color:lemonchiffon;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color:rgb(37, 73, 180);
+    border-radius:2rem;
+    border:none;
+    
+}
+
+
+
+@media (min-width : 768px) and (max-width:1024px){
+    
+.home__body_container{
+    width:100%;
+}
+}
+
+
+
+@media (min-width : 1024px){
+
+   .contact_button{
+    width:30%;
+    margin: 1rem 0 1rem 0;
+   }
+   .home__h2_interesado{
+       width:90%;
+        margin:1rem auto;
+    }
+
+    .home__nav_bar{
+        position: fixed;
+        top:0;
+        left:0;
+    }
+    .home__nav_bar__menu_figure{
+        display:none;
+    }
+
+    .menu_pc{
+	display: flex;
+    }
+    .home__body_container{
+	margin-top:4rem;
+    width:75%;
+	}
+    
+}

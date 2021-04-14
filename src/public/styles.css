@@ -1,0 +1,128 @@
+.home__body{
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+}
+
+img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
+    width:100%;
+}
+
+.img1, .img2{
+    height:50vh;
+}
+
+.titulos{
+    width:70%;
+    text-align: center;
+    color:rgb(68, 66, 65);
+    border-top: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding: 1rem;
+}
+
+.home__h2_servicios, .home__p_servicios{
+    display: none;
+}
+
+.home__body_container{
+    margin:0 auto;
+    background-color: rgb(211, 211, 211);
+    width:100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.quienessomos, .servicios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.home__p-container, .home__p-container-servicios{
+    display:flex;
+    width:80%;
+}
+
+
+.home__p_quienessomos, .home__p_servicios{
+    margin:0;
+    font-size: 1.5rem;
+    text-align: center;
+    color:rgb(68, 66, 65);
+}
+
+.contact_button{
+    width:70%;
+    height:5rem;
+    margin: 1rem 0 5rem 0;
+    padding:.5rem;
+    color:lemonchiffon;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color:rgb(69, 94, 168);
+    border-radius:2rem;
+    border:none;
+    
+}
+
+
+
+
+
+@media (min-width : 768px) and (max-width:1024px){
+    .home__p-container{
+        display: block;
+        column-count:2;
+}
+.home__body_container{
+    width:100%;
+}
+}
+
+@media (min-width : 1024px){
+
+    .home__p-container, .home__p-container-servicios{
+        display: block;
+        column-count:2;
+}
+   .home__body_container{
+       flex-flow: row wrap;
+       align-items: flex-start;
+       justify-content: center;
+       width:75%;
+   }
+   .home__h2_servicios, .home__p_servicios{
+        display: flex;
+        justify-content: center;
+   }
+   .servicios, .quienessomos{
+       width:50%;
+   }
+   .contact_button{
+    width:30%;
+    margin: 1rem 0 1rem 0;
+   }
+   .home__h2_interesado{
+       width:90%;
+        margin:1rem auto;
+    }
+
+    .home__nav_bar{
+        position: fixed;
+        top:0;
+        left:0;
+    }
+    .home__nav_bar__menu_figure{
+        display:none;
+    }
+
+    .menu_pc{
+	display: flex;
+    }
+    .home__body_container{
+	margin-top:4rem;
+	}
+    
+}
