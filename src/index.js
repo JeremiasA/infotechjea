@@ -15,20 +15,21 @@ app.set('views', path.join(__dirname, './views'));
 // middlewares
 app.use(express.static(path.join(__dirname, './public')));
 app.use(express.urlencoded({extended: false}));
+app.set('port', process.env.PORT || 3000)
 app.use(session({
     secret: 'jhb%&/%&$/(VBBTVUI',
-    resave: false,
+    resave: true,
     saveUninitialized:true,
+    cookie:{maxAge:7 * 24 * 60 * 60 *1000},
     store: MongoStore.create({
-    mongoUrl: 'mongodb://localhost/infotech',
+    mongoUrl: 'mongodb+srv://jeremiasa:jeremiasa@cluster0.2jj0w.mongodb.net/infotechprueba?retryWrites=true&w=majority',
     ttl: 7 * 24 * 60 * 60} // = 14 days. Defaul
 )
 }))
 
 // db connection
 try {
-    mongoose.connect('mongodb://localhost/infotech', { useNewUrlParser: true, useUnifiedTopology: true });
-} catch (error) {
+    mongoose.connect('mongodb+srv://jeremiasa:jeremiasa@cluster0.2jj0w.mongodb.net/infotechprueba?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });} catch (error) {
     console.log(error)    
 }
 
@@ -37,6 +38,6 @@ app.use(routes);
 
 //conexion
 //servidor
-app.listen(3000, () =>{
+app.listen(app.get('port'), () =>{
     console.log('Esperando conexiones');
 });
