@@ -32,6 +32,7 @@ img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
     margin:0 auto;
     background-color: rgb(211, 211, 211);
     width:100%;
+    min-width:400px;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;

@@ -25,6 +25,7 @@ img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
 .home__body_container{
     margin:0 auto;
     background-color: rgb(211, 211, 211);
+    min-width:400px;
     width:100%;
     display: flex;
     flex-flow: column nowrap;
