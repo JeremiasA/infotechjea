@@ -6,6 +6,7 @@ const SchemaCarrito = {
     precio: Number,
     cantidad: Number,
     total: Number,
+    imgsrc: String,
     session: String
 };
 

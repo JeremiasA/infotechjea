@@ -1,5 +1,5 @@
 .home__body{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     margin:0 auto;
 }
 
@@ -12,9 +12,9 @@ img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
 .titulos{
     width:70%;
     text-align: center;
-    color:lemonchiffon;
-    border-top: 2px solid rgb(179, 61, 61);
-    border-bottom: 2px solid rgb(179, 61, 61);
+    color:rgb(68, 66, 65);
+    border-top: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
     padding: 1rem;
 }
 
@@ -24,7 +24,7 @@ img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
 
 .home__body_container{
     margin:0 auto;
-    background-color: rgb(66, 64, 64);
+    background-color: rgb(211, 211, 211);
     width:100%;
     display: flex;
     flex-flow: column nowrap;
@@ -48,7 +48,7 @@ img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
     margin:0;
     font-size: 1.5rem;
     text-align: center;
-    color:lemonchiffon;
+    color:rgb(68, 66, 65);
 }
 
 .contact_button{
@@ -59,7 +59,7 @@ img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
     color:lemonchiffon;
     font-size: 1.5rem;
     font-weight: 600;
-    background-color:rgb(37, 73, 180);
+    background-color:rgb(69, 94, 168);
     border-radius:2rem;
     border:none;
     

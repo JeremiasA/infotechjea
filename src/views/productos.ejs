@@ -15,7 +15,7 @@
     <header class="header">
         <header id="header" class="header">
             <div id="ruta" class="ruta">
-                <h1 class="marca"><a href="/productos"> Tienda online </a> </h1>
+                <h1 class="marca"><a href="/productos"> Tienda </a> </h1>
 
             </div>
             <div class="carritoContainer">
@@ -43,7 +43,7 @@
     
     <div class="card">
         <h3 class="card_title"><%= producto.nombre %></h3>
-        <img class=" card_img" src="images/cpua.png" alt="">
+        <img class=" card_img" src="images/<%= producto.imgsrc %>" alt="">
         <div class="barraInferior">
             <h3 class="descripcion"><%= producto.descripcion %></h3>
 
@@ -54,7 +54,7 @@
 
             <div class="card_botones">
                 <button class="<%= `agregar_boton ${producto._id} ${producto.stock}` %>">Agregar al carrito</button>
-                <button id="comprar_boton" class="comprar_boton">Comprar</button>
+                <button class="<%= `comprar_boton ${producto._id} ${producto.stock}` %>">Comprar</button>
             </div>            
             
         </div>

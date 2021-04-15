@@ -1,5 +1,5 @@
 .contact__body{
-    background-color:black;
+    background-color: rgb(255, 255, 255);
     margin:0 auto;
 }
 
@@ -14,15 +14,15 @@ img {
 .titulos{
     width:100%;
     text-align: center;
-    color:lemonchiffon;
-    border-top: 2px solid rgb(179, 61, 61);
-    border-bottom: 2px solid rgb(179, 61, 61);
+    color:rgb(68, 66, 65);
+    border-top: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
     padding: 1rem;
 }
 
 .contact__body_container{
     margin:0 auto;
-    background-color: rgb(66, 64, 64);
+    background-color: rgb(211, 211, 211);
     width:100%;
     display: flex;
     flex-flow: column nowrap;
@@ -55,7 +55,7 @@ img {
 .p_contacto, .p_ubicacion, .p_contacto_superior{
     margin:0;
     font-size: 1rem;
-    color:lemonchiffon;
+    color:rgb(68, 66, 65);
 }
 
 
@@ -69,7 +69,7 @@ img {
     color:lemonchiffon;
     font-size: 1.5rem;
     font-weight: 600;
-    background-color:rgb(37, 73, 180);
+    background-color:rgb(69, 94, 168);
     border-radius:2rem;
     border:none;
 }
@@ -85,6 +85,9 @@ img {
     margin: .3rem 0 .3rem 0 ;
 }
 
+label{
+    color:rgb(68, 66, 65);
+}
 
 @media (min-width : 768px) and (max-width:1024px){
     

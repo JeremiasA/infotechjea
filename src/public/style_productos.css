@@ -2,8 +2,15 @@ body{
     margin:0;
     padding:0
 }
+.home_img{
+    max-width:2rem;
+}
+
 .container{
     width:75%;
+    min-width:300px;
+    min-height:70vh;
+
     margin: 0 auto;
     background-color: rgb(211, 211, 211);
 }
@@ -11,8 +18,8 @@ body{
 
 
 .header{
-    top:5vh;
-    height: 65px;
+    top:4rem;
+    height:55px;
     width:75%;
     display: flex;
     /* background-color: rgb(64, 66, 65); */
@@ -69,8 +76,8 @@ body{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 18vw;
     min-width: 400px;
+    width: 400px;
     min-height: 500px;
     margin: 2rem 1rem;
     border: 1px solid rgb(146, 144, 144);
@@ -106,8 +113,9 @@ body{
 }
 
 .cards{
-    margin: 9vh auto 0;
-    width:80%;
+    margin: 7rem auto 0;
+    width:100%;
+    min-width:300px;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -202,17 +210,18 @@ background-color: rosybrown;
 }
 
 .containerCarrito{
-    display: flex;
+   display: flex;
    margin-top: 10vh;
    padding-top: 2vh;
    min-height: 75vh;
+   width:100%;
 }
 
 .resumenCarrito{
     width:20%;
     border: 1px solid rgb(68, 66, 66);
     border-radius: .5rem;
-    margin: 1vh 1vw;
+    margin: 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -281,6 +290,17 @@ height:5vh;
     margin-left:2vw;
 }
 
+.quitar_boton{
+    background-color:rgb(184, 54, 54);
+    color:rgb(255, 255, 255);
+    border-radius: .2rem;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    height:3rem;
+    font-size: 1.3rem;
+}
+
 .invisible{
     display:none;
 }
@@ -291,10 +311,17 @@ height:5vh;
         font-size: .9rem;
     }
     
-        .marca a{
-            font-size: 2rem;
+    .quitar_boton{
+        height:2rem;
+        font-size: 1rem;
+    }
+      
+        .ruta{
+            font-size: 1rem;
         }
-        
+        .card{
+            min-width:70%;
+        }
     }
     
     @media (max-width: 1024px){
@@ -314,7 +341,7 @@ height:5vh;
         }
         .resumenCarrito{
             width:95%;
-            margin: 1vh auto;
+            margin: 2rem auto;
             height: auto;
             }
             .containerCarrito{
@@ -341,8 +368,37 @@ height:5vh;
             font-size: .9rem;
             
         }
-        .marca a{
-            font-size: 2rem;
+      
+        .ruta{
+            font-size: .8rem;
         }
-       
+        .quitar_boton{
+            height:1.5rem;
+            font-size: .8rem;
+        }
+          
+        .container{width:100%}
+        .card{
+            min-width:80%;
+        }
+    }
+
+    @media (max-width: 400px){
+       .micarrito_header{
+           display:none;
+       }
+      
+        .ruta{
+            font-size: .6rem;
+        }
+        
+        .quitar_boton{
+            width:1.5rem;
+            font-size: 0;
+        }
+          
+        .container{width:100%}
+        .card{
+            min-width:90%;
+        }
     }

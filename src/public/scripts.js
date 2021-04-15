@@ -1,4 +1,5 @@
 const menu = document.getElementById('menu');
+const link_servicios = document.getElementById('link_servicios');
 const menu_movil_links = document.querySelectorAll('menu_movil_links');
 
 document.getElementById('menu_button').addEventListener('click', ()=>{
@@ -9,6 +10,7 @@ document.getElementById('menu_button').addEventListener('click', ()=>{
     }
 })
 
-    
+
+
 
 

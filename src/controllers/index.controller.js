@@ -1,5 +1,5 @@
-const Productos = require ('../models/model.productos')
-const Producto_carrito = require ('../models/model.carrito')
+const Productos = require ('../models/model.productos');
+const Producto_carrito = require ('../models/model.carrito');
 const mercadopago = require('mercadopago');
 // Agrega credenciales MP
 mercadopago.configure({
@@ -40,6 +40,7 @@ controller.agregar_carrito = async (req, res) =>{
                 precio: producto.precio,
                 cantidad: cant,
                 total: producto.precio,
+                imgsrc: producto.imgsrc,
                 session : req.sessionID
             })
             await carrito.save();
@@ -48,7 +49,7 @@ controller.agregar_carrito = async (req, res) =>{
             await busqueda.updateOne({total : busqueda.precio*busqueda.cantidad});
             await busqueda.save();
         }
-        await producto.updateOne({stock: --producto.stock});
+        //await producto.updateOne({stock: --producto.stock}); STOCK BAJA SOLO SI SE CONCRETA LA VENTA
         res.send(producto);
         
         
@@ -64,11 +65,59 @@ controller.agregar_carrito = async (req, res) =>{
         
     }
 
+controller.quitar = async (req, res) =>{
+    const {id} = req.params;
+    const productoCarrito = await Producto_carrito.findById({_id : id});
+    const busqueda = await Productos.findOne({nombre : productoCarrito.nombre})
+
+    
+    if((await Producto_carrito.findById({_id : id})).cantidad > 1){
+        await productoCarrito.updateOne({cantidad: --productoCarrito.cantidad})
+    }else if(productoCarrito.cantidad ==1){
+        await Producto_carrito.deleteOne({_id:id})
+    }
+    
+    res.end();
+}
+
 
 controller.contacto = (req, res)=>{
     res.render('contacto');
 }
 
+
+
+controller.checkoutIndividual = async (req,res)=>{
+    const prod = await Productos.find({_id : req.params.id});
+
+    const items = [];
+    prod.forEach(producto =>{
+        const item={
+            title: producto.nombre,
+            unit_price: producto.precio,
+            quantity: 1
+        }
+        items.push(item)
+    })
+
+    // Crea un objeto de preferencia
+    let preference = {items, "back_urls": {
+        "success": "localhost:3000/productos",
+        "failure": "http://www.tu-sitio/failure",
+        "pending": "http://www.tu-sitio/pending"
+    },
+    "auto_return": "approved",};
+                
+// let preference = await Producto_carrito.find({session : req.sessionID});
+    mercadopago.preferences.create(preference)
+  .then(function(response){
+
+    res.send(response.body.init_point);
+    
+  }).catch(function(error){
+    console.log(error);
+  });
+}
 
 
 controller.checkout = async (req,res)=>{
@@ -85,7 +134,12 @@ controller.checkout = async (req,res)=>{
     
     
     // Crea un objeto de preferencia
-    let preference = {items};
+    let preference = {items, "back_urls": {
+        "success": "localhost:3000/productos",
+        "failure": "http://www.tu-sitio/failure",
+        "pending": "http://www.tu-sitio/pending"
+    },
+    "auto_return": "approved",};
                 
 // let preference = await Producto_carrito.find({session : req.sessionID});
 console.log(preference)
@@ -97,6 +151,16 @@ console.log(preference)
   }).catch(function(error){
     console.log(error);
   });
+}
+
+controller.alta_productos = (req, res) =>{
+    res.render('alta_productos')
+}
+
+controller.altaproducto = (req, res) =>{
+    const producto = new Productos(req.body)
+    producto.save();
+    res.redirect("/productos")
 }
 
 module.exports= controller;

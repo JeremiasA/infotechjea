@@ -1,14 +1,18 @@
 .home__body{
     background-color: rgb(255, 255, 255);
     margin: 0 auto;
+    
 }
 
 img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
     width:100%;
+    
 }
 
 .img1, .img2{
-    height:50vh;
+    max-height:50vh;
+    min-height:400px;
+    min-width: 350px;
 }
 
 .titulos{
@@ -31,12 +35,15 @@ img { /*Esto ajusta automaticamente todas las imagenes al 100%*/
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    min-height: 70vh;
+    
 }
 
 .quienessomos, .servicios{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 
